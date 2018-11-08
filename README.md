@@ -15,15 +15,15 @@ Some of the things that are an improvement with respect to a typical plot create
 6. Text - The default text is changed to Times New Roman and the font sizes are scaled relatively, with the axis text labels set as the largest, then the axis numbers and legend text are slightly smaller.
 
 
-## Required Scripts
+# Required Scripts
 startup.m - this is fundamental and is to be run at the beginning of your script so that it loads the variables that will be used in plotting. It also does a clear, close and clc sweep to clean the workspace etc.
 
-The following functions are also needed
-rgb.m
-setFigureProps.m
-plotm.m
-textplot.m
-pdfUI.m
+The following functions are also needed:
+1. rgb.m
+1. setFigureProps.m
+1. plotm.m
+1. textplot.m
+1. pdfUI.m
 
 
 # Licensing
