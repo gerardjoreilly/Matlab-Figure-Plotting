@@ -1,17 +1,30 @@
 # Matlab Figure Plotting
 
-This is an example script to plot something in Matlab and then create some high quality plots to be used in documents. This means that they will look well in documents written using Times New Roman with a font size of around 11pt.
+This is an example script to plot something in Matlab and then create some high quality figures. This means that they will look well in documents written using Times New Roman with a font size of around 11pt.
+
+Suggestions are of course welcome.
 
 Scripts that are freely available on the web are used and provided here also. No copyright infringement is intended.
 
+Some of the things that are an improvement with respect to a typical plot created using Matlab's default settings:
+1. Image quality - Matlab tends to save in pixelated images by default which look poor.
+2. Sizing and proportions - the figures will be printed at a size and proportion that looks well within itself and also with respect to the surrounding text in the document. A figure size will be specified in centimetres and the actual plot will maintain that in a document without any need for resizing etc. This will make it look good and consistent.
+3. Colours - Default colours in Matlab are not great and limited. Here a list of standard colours is provided in a single variable that can be used while looping plots etc.
+4. Subplots - While not a specific function, examples of how to make good subplots are included, which obviously means NOT using the subplot function in Matlab.
+5. Gridlines - Matlab provided dashed gridlines by default. Here these are changed by default to solid grey lines.
+6. Text - The default text is changed to Times New Roman and the font sizes are scaled relatively, with the axis text labels set as the largest, then the axis numbers and legend text are slightly smaller.
+
+
 ## Required Scripts
-startup.m - this is a pretty fundamental script that is to be run at the beginning of your script so that it loads the variabls that will be used
-in plotting. It also does a clear, close and clc sweep to clean the
-workspace etc.
+startup.m - this is fundamental and is to be run at the beginning of your script so that it loads the variables that will be used in plotting. It also does a clear, close and clc sweep to clean the workspace etc.
 
-rgb.m - this is needed to generate the colours used in the cmap variable. You don't need to use or call it, it just needs to be findable by Matlab.
+The following functions are also needed
+rgb.m
+setFigureProps.m
+plotm.m
+textplot.m
+pdfUI.m
 
-This is to be completed...
 
 # Licensing
 Copyright (C) 2017  Gerard J. O'Reilly
