@@ -11,6 +11,8 @@ function [h]=textplot(x,y,str,pos,bc,ec,fs,int,units,rot)
 %           Options: lt, lm, lb, ct, cm, cb, rt, rm, rb
 % bc:       background color (string)
 % ec:       edge color (string)
+% units:    in normalized or absolute units
+% rot:      rotation of the text in degrees counterclockwise
 
 if nargin<7
     fs=16;

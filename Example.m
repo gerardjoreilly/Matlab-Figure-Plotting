@@ -1,7 +1,7 @@
 % Call the startup function
 run('startup.m');
 
-% Create some random data like a hazard curve and a displaced shape to plot
+% Create some random data like a hazard curve to plot
 s=logspace(-2,1,20);
 H(1,:)=7e-4*exp(-2.0*log(s)-0.20*log(s).^2);
 H(2,:)=7e-4*exp(-3.0*log(s)-0.30*log(s).^2);
@@ -19,7 +19,6 @@ fig_h=figure;
 % scale to log after the data is plotted. 
 grid on; hold on; box on; 
 
-% setFigureProps(h,fs,fh,fw)
 % This is needed to set the figure dimension and font size up before 
 % plotting. Set the figure's fontsize to "fs2" which is the second tier
 % font size, then use "fs1" for the axis labels. For the dimensions, use
@@ -28,21 +27,29 @@ grid on; hold on; box on;
 % centimetres.
 setFigureProps(fig_h,fs2,fh1,fw1);
 
-% Plot in a loopusing a custom function to plot markers
+% Plot in a loop using a custom function to plot markers
 for i=1:2
     p(i)=plotm(s,H(i,:),cmap(i,:),'o',ms2,'-',lw3);
 end
 
 % Create the axis labels. These will be text with font size "fs1" followed
-% by a comma and teh symbol in italics and the unit of measure in square
+% by a comma and the symbol in italics and the unit of measure in square
 % brackets.
 xlabel('Spectral acceleration, {\it{Sa}}({\it{T}}_1)  [g]','fontsize',fs1);
 ylabel('Hazard, {\it{H}}','fontsize',fs1);
 
-% Set the axis limits
+% Set the axis limits and change the scale to logscale here instead of
+% using the loglog function to plot
 xlim([1e-2 1e1]);
 ylim([1e-6 1e0]);
 set(gca,'xscale','log','yscale','log');
+
+% Add some text to the plot and specify where you want it either in actual
+% coordinates or in normalized units, which means that you can say you want
+% the text to be positioned at the halfway point in x and at 90% of the
+% height, which would be 0.5,0.9
+textplot(0.7,0.9,'Hazard curve 1 is in black','cm','none','none',fs2,'none','normalized',0);
+textplot(0.1,0.5,'Hazard curve 2 is in red','cm','none','none',fs2,'none','normalized',90);
 
 % Create the legend
 legend([p(1) p(2)],'Hazard curve 1','Hazard curve 2','location','southwest');
